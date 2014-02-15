@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Todo.create(:status => "notstarted", :summary => "Take out trash")
+Todo.create(:status => "notstarted", :summary => "Do laundry")
+Todo.create(:status => "notstarted", :summary => "Learn angular.js")

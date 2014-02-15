@@ -1,0 +1,7 @@
+%h1
+  Todos
+.todo{:"ng-repeat"=>"todo in todos"}
+  .done
+    {{todo.status}}
+  .description
+    {{todo.summary}}
