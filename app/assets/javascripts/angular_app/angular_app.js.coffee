@@ -1,8 +1,14 @@
-window.application = angular.module("application", ["ngResource", "ngRoute"])
+window.application = angular.module("application", ["ngResource", "ngRoute", 'applicationServices'])
 
-window.application.controller("TodosCtl", ["$scope", "$resource", ($scope, $resource) ->
-  todoResource = $resource("http://localhost:3000/todos/:id", {id: "@id"})
-  $scope.todos = todoResource.query()
+window.application.controller("TodosCtl", ["$scope", "Todo", ($scope, Todo) ->
+  $scope.todos = Todo.query()
+  $scope.createTodo = () ->
+    todo = new Todo({summary:@summary,status:'not started'})
+    todo.$save((data) ->
+      $scope.todos.push(data)
+    )
+
+  $scope.statuses = ['not started','started','finished']
 ])
 
 window.application.config(["$routeProvider", ($router) ->
