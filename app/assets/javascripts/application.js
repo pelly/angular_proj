@@ -17,4 +17,5 @@
 //= require angular/angular-resource.min
 //= require angular/angular-route.min
 
-//= require_tree ./angular_app
+//= require angular_app/services
+//= require angular_app/angular_app
