@@ -7,6 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Todo.create(:status => "notstarted", :summary => "Take out trash")
-Todo.create(:status => "notstarted", :summary => "Do laundry")
-Todo.create(:status => "notstarted", :summary => "Learn angular.js")
+Todo.create(:status => "not started", :summary => "Take out trash")
+Todo.create(:status => "started", :summary => "Do laundry")
+Todo.create(:status => "finished", :summary => "Learn angular.js")
