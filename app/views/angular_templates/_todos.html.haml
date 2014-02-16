@@ -1,7 +1,19 @@
-%h1
-  Todos
-.todo{:"ng-repeat"=>"todo in todos"}
-  .done
-    {{todo.status}}
-  .description
-    {{todo.summary}}
+%nav.top-bar
+  %ul.title-area
+    %li.name
+      %h1
+        Todos
+
+.row.todo{:"ng-repeat"=>"todo in todos"}
+  .columns.small-6
+    .description
+      {{todo.summary}}
+  .columns.small-6
+    %select{:'ng-model'=>"todo.status", :'ng-options'=>"s for s in statuses"}
+
+.row.new-todo
+  %form{:"ng-submit"=>"createTodo()", :"ng-controller"=>"TodosCtl", :"name"=>"createTodoForm"}
+    .column.small-6
+      %input{:'ng-model'=>'summary'}
+    .column.small-6
+      %input{:"type"=>'submit'}
